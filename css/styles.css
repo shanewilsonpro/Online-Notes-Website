@@ -6,7 +6,7 @@ html {
 /* ---- Background image & fonts ------ */
 body {
     font-family: Arvo, serif;
-    background: url("/img/notes-bg.jpg") no-repeat center center;
+    background: url("img/notes-bg.jpg") no-repeat center center;
     background-attachment: fixed;
     background-size: cover;
 }

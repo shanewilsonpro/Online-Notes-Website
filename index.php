@@ -9,11 +9,11 @@
   <title>Online Notes</title>
 
   <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
-    integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="css/styles.css">
+  <!-- <link rel="stylesheet" href="css/styles.css" type="text/css"> -->
+  <style><?php require("css/styles.css");?></style>
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Arvo&display=swap" rel="stylesheet">
@@ -73,13 +73,11 @@
 
             <div class="form-group">
               <label for="loginemail" class="sr-only">Email:</label>
-              <input class="form-control" type="email" name="loginemail" id="loginemail" placeholder="Email"
-                maxlength="50">
+              <input class="form-control" type="email" name="loginemail" id="loginemail" placeholder="Email" maxlength="50">
             </div>
             <div class="form-group">
               <label for="loginpassword" class="sr-only">Password:</label>
-              <input class="form-control" type="password" name="loginpassword" id="loginpassword" placeholder="Password"
-                maxlength="30">
+              <input class="form-control" type="password" name="loginpassword" id="loginpassword" placeholder="Password" maxlength="30">
             </div>
             <div class="checkbox">
               <label for="">
@@ -117,23 +115,19 @@
 
             <div class="form-group">
               <label for="username" class="sr-only">Username:</label>
-              <input class="form-control" type="text" name="username" id="username" placeholder="Username"
-                maxlength="30">
+              <input class="form-control" type="text" name="username" id="username" placeholder="Username" maxlength="30">
             </div>
             <div class="form-group">
               <label for="email" class="sr-only">Email:</label>
-              <input class="form-control" type="email" name="email" id="email" placeholder="Email Address"
-                maxlength="50">
+              <input class="form-control" type="email" name="email" id="email" placeholder="Email Address" maxlength="50">
             </div>
             <div class="form-group">
               <label for="password" class="sr-only">Choose a password:</label>
-              <input class="form-control" type="password" name="password" id="password" placeholder="Choose a password"
-                maxlength="30">
+              <input class="form-control" type="password" name="password" id="password" placeholder="Choose a password" maxlength="30">
             </div>
             <div class="form-group">
               <label for="password2" class="sr-only">Confirm password:</label>
-              <input class="form-control" type="password" name="password2" id="password2" placeholder="Confirm password"
-                maxlength="30">
+              <input class="form-control" type="password" name="password2" id="password2" placeholder="Confirm password" maxlength="30">
             </div>
           </div>
 
@@ -164,10 +158,9 @@
 
             <div class="form-group">
               <label for="forgotemail" class="sr-only">Email:</label>
-              <input class="form-control" type="email" name="forgotemail" id="forgotemail" placeholder="Email"
-                maxlength="50">
+              <input class="form-control" type="email" name="forgotemail" id="forgotemail" placeholder="Email" maxlength="50">
             </div>
-            
+
           </div>
 
           <div class="modal-footer">
@@ -183,18 +176,16 @@
   <!-- FOOTER -->
   <div class="footer">
     <div class="container">
-      <p>Shane Wilson Copyright &copy; 2021.</p> <!-- use this if past 2021, <?php $today = date("Y"); echo $today?> -->
+      <p>Shane Wilson Copyright &copy; 2021.</p> <!-- use this if past 2021, <?php $today = date("Y");
+                                                                              echo $today ?> -->
     </div>
   </div>
 
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  <script src="https://code.jquery.com/jquery-1.12.4.min.js"
-    integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
-    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
-    integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
-    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+  <script src="index.js"></script>
 </body>
 
 </html>
