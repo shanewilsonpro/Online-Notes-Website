@@ -13,7 +13,8 @@
     integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="css/styles.css">
+  <!-- <link rel="stylesheet" href="css/styles.css" type="text/css"> -->
+  <style><?php require("css/styles.css");?></style>
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Arvo&display=swap" rel="stylesheet">
