@@ -1,3 +1,28 @@
+<?php
+session_start();
+if(!isset($_SESSION['user_id'])){
+    header("location: index.php");
+}
+include('connection.php');
+
+$user_id = $_SESSION['user_id'];
+
+//get username and email
+$sql = "SELECT * FROM users WHERE user_id='$user_id'";
+$result = mysqli_query($link, $sql);
+
+$count = mysqli_num_rows($result);
+
+if($count == 1) {
+    $row = mysqli_fetch_array($result, MYSQLI_ASSOC); 
+    $username = $row['username'];
+    $email = $row['email']; 
+} else {
+    echo "There was an error retrieving the username and email from the database";   
+}
+
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -13,7 +38,8 @@
     integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="css/styles.css">
+  <!-- <link rel="stylesheet" href="css/styles.css" type="text/css"> -->
+  <style><?php require("css/styles.css");?></style>
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Arvo&display=swap" rel="stylesheet">
@@ -65,14 +91,14 @@
       </div>
       <div class="navbar-collapse collapse" id="navbarCollapse">
         <ul class="nav navbar-nav">
-          <li><a href="#">Profile</a></li>
+          <li class="active"><a href="#">Profile</a></li>
           <li><a href="#">Help</a></li>
           <li><a href="#">Contact</a></li>
-          <li class="active"><a href="#">My Notes</a></li>
+          <li><a href="mainpageloggedin.php">My Notes</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Logged in as <b>username</b></a></li>
-          <li><a href="#">Log out</a></li>
+            <li><a href="#">Logged in as <b><?php echo $username; ?></b></a></li>
+          <li><a href="index.php?logout=1">Log out</a></li>
         </ul>
       </div>
     </div>
@@ -87,7 +113,7 @@
                   <table class="table table-hover table-condensed table-bordered">
                       <tr data-target="#updateusername" data-toggle="modal">
                           <td>Username</td>
-                          <td>value</td>
+                          <td><?php echo $username; ?></td>
                       </tr>
                       <tr data-target="#updateemail" data-toggle="modal">
                           <td>Email</td>
@@ -115,15 +141,15 @@
           </div>
           <div class="modal-body">
 
-            <!-- Login  message from PHP file -->
-            <div id="loginmessage">
+            <!-- update username message from PHP file -->
+            <div id="updateusernamemessage">
 
             </div>
 
             <div class="form-group">
-              <label for="loginemail">Username:</label>
+              <label for="username">Username:</label>
               <input class="form-control" type="text" name="username" id="username"
-                maxlength="30" value="username value">
+                maxlength="30" value="<?php echo $username; ?>">
             </div>
             
           </div>
@@ -148,8 +174,8 @@
           </div>
           <div class="modal-body">
 
-            <!-- Login  message from PHP file -->
-            <div id="loginmessage">
+            <!-- update email message from PHP file -->
+            <div id="update">
 
             </div>
 
@@ -181,8 +207,8 @@
           </div>
           <div class="modal-body">
 
-            <!-- Login  message from PHP file -->
-            <div id="loginmessage">
+            <!-- update password message from PHP file -->
+            <div id="updatepasswordmessage">
 
             </div>
 
@@ -229,6 +255,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
     integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
     crossorigin="anonymous"></script>
+    <script src="profile.js"></script>
 </body>
 
 </html>
