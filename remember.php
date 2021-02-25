@@ -66,7 +66,7 @@ if(!isset($_SESSION['user_id']) && !empty($_COOKIE['rememberme'])){
         
         //log the user in and redirect to notes page
         $_SESSION['user_id'] = $row['user_id'];
-        header("location:mainpageloggedin.php");
+        header("location: mainpageloggedin.php");
         
     }
 }

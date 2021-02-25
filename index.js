@@ -5,7 +5,7 @@ $("#signupform").submit(function (event) {
 
     var datatopost = $(this).serializeArray();
 
-    console.log(datatopost);
+    // console.log(datatopost);
 
     $.ajax({
         url: "signup.php",
@@ -28,7 +28,7 @@ $("#loginform").submit(function (event) {
 
     var datatopost = $(this).serializeArray();
 
-    console.log(datatopost);
+    // console.log(datatopost);
 
     $.ajax({
         url: "login.php",
@@ -40,6 +40,27 @@ $("#loginform").submit(function (event) {
             } else {
                 $("#loginmessage").html(data);
             }
+        },
+        error: function () {
+            $("#signupmessage").html("<div class='alert alert-danger'>There was an error with the Ajax Call. Please try again later.</div>");
+        }
+    });
+});
+
+//forgot password form once form is submitted
+$("#forgotpasswordform").submit(function (event) {
+    event.preventDefault();
+
+    var datatopost = $(this).serializeArray();
+
+    // console.log(datatopost);
+
+    $.ajax({
+        url: "forgot-password.php",
+        type: "POST",
+        data: datatopost,
+        success: function (data) {
+            $('#forgotpasswordmessage').html(data);
         },
         error: function () {
             $("#signupmessage").html("<div class='alert alert-danger'>There was an error with the Ajax Call. Please try again later.</div>");
