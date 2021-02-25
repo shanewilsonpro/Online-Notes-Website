@@ -53,26 +53,26 @@ $("#updatepasswordform").submit(function(event) {
 
 
 // Ajax call to updateemail.php
-// $("#updateemailform").submit(function(event){ 
-//     //prevent default php processing
-//     event.preventDefault();
+$("#updateemailform").submit(function(event){ 
+    //prevent default php processing
+    event.preventDefault();
 
-//     //collect user inputs
-//     var datatopost = $(this).serializeArray();
+    //collect user inputs
+    var datatopost = $(this).serializeArray();
 
-//     //send them to updateusername.php using AJAX
-//     $.ajax({
-//         url: "updateemail.php",
-//         type: "POST",
-//         data: datatopost,
-//         success: function(data) {
-//             if(data){
-//                 $("#updateemailmessage").html(data);
-//             }
-//         },
-//         error: function(){
-//             $("#updateemailmessage").html("<div class='alert alert-danger'>There was an error with the Ajax Call. Please try again later.</div>");
+    //send them to updateusername.php using AJAX
+    $.ajax({
+        url: "updateemail.php",
+        type: "POST",
+        data: datatopost,
+        success: function(data) {
+            if(data){
+                $("#updateemailmessage").html(data);
+            }
+        },
+        error: function(){
+            $("#updateemailmessage").html("<div class='alert alert-danger'>There was an error with the Ajax Call. Please try again later.</div>");
             
-//         }
-//     });
-// });
+        }
+    });
+});

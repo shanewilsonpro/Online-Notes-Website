@@ -117,7 +117,7 @@ if($count == 1) {
                       </tr>
                       <tr data-target="#updateemail" data-toggle="modal">
                           <td>Email</td>
-                          <td>value</td>
+                          <td><?php echo $email ?></td>
                       </tr>
                       <tr data-target="#updatepassword" data-toggle="modal">
                           <td>Password</td>
@@ -175,14 +175,14 @@ if($count == 1) {
           <div class="modal-body">
 
             <!-- update email message from PHP file -->
-            <div id="update">
+            <div id="updateemailmessage">
 
             </div>
 
             <div class="form-group">
-              <label for="loginemail">Email:</label>
+              <label for="email">Email:</label>
               <input class="form-control" type="email" name="email" id="email"
-                maxlength="50" value="email value">
+                maxlength="50" value="<?php echo $email ?>">
             </div>
             
           </div>
