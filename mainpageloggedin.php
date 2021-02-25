@@ -52,6 +52,25 @@ if(!isset($_SESSION['user_id'])) {
           background-color: #FBEFFF;
           padding: 10px;
       }
+      .noteheader {
+        border: 1px solid grey;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        cursor: pointer;
+        padding: 0 10px;
+        background: linear-gradient(#FFFFFF, #ECEAE7);
+      }
+      .text {
+        font-size: 20px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+      .timetext {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
   </style>
 
 </head>
@@ -86,6 +105,11 @@ if(!isset($_SESSION['user_id'])) {
 
   <!-- Container -->
   <div class="container" id="container">
+    <!-- Alert Message -->
+    <div id="alert" class="alert alert-danger collapse">
+      <a class="close" data-dismiss="alert">&times;</a>
+      <p id="alertContent"></p>
+    </div>
       <div class="row">
           <div class="col-md-offset-3 col-md-6">
               <div class="buttons">
@@ -119,6 +143,7 @@ if(!isset($_SESSION['user_id'])) {
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
     integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
     crossorigin="anonymous"></script>
+  <script src="mynotes.js"></script>
 </body>
 
 </html>
